@@ -2,25 +2,66 @@
   <div class="pt-16 mb-16 text-center flex flex-col justify-center items-center">
     <h2 class="text-7xl gradient-text">Skills</h2>
 
-    <div class="flex flex-wrap justify-center items-start max-w-[75rem] mx-auto gap-6 mt-10">
-      <span v-for="(skill, i) in skills" :key="i" class="flex flex-col justify-center items-center space-y-4 w-28">
-        <span
-          class="flex justify-center items-center h-28 w-28 rounded-lg"
-          :style="{
-            backgroundColor: skill.bgColor,
-          }"
-        >
-          <font-awesome-icon :icon="skill.icon" class="text-6xl text-white" />
-        </span>
+    <div class="max-w-[75rem] mx-auto">
+      <div class="mt-10 flex justify-center items-center flex-wrap gap-4">
+        <button v-for="(cat, i) in categories" :key="i" @click="onCatClick(cat)">
+          <span
+            class="flex justify-center items-center rounded-3xl overflow-hidden uppercase text-lg font-medium group"
+            :style="{
+              boxShadow: '0px 4px 6px 0px rgba(0, 0, 0, 0.12)',
+              background: 'linear-gradient(80deg, #9c83ff 14.62%, #ff9051 85.38%)',
+            }"
+          >
+            <span
+              class="flex justify-center items-center bg-white hover h-full w-full rounded-3xl p-[2px] group-hover:bg-transparent group-active:bg-transparent transition-all duration-150 ease-in-out"
+              :class="{
+                'bg-transparent': selectedCat === cat,
+              }"
+            >
+              <span
+                class="flex justify-center items-center bg-white h-full w-full px-6 py-2 rounded-3xl group-active:bg-transparent group-active:text-white transition-all duration-150 ease-in-out"
+                :class="{
+                  'text-white bg-transparent': selectedCat === cat,
+                }"
+                >{{ cat }}</span
+              >
+            </span>
+          </span>
+        </button>
+      </div>
 
+      <TransitionGroup name="skills" tag="div" class="flex flex-wrap justify-center items-start gap-6 mt-10">
         <span
-          class="text-xl font-medium"
-          :style="{
-            color: skill.bgColor,
-          }"
-          >{{ skill.name }}</span
+          v-for="(skill, i) in filteredSkills"
+          :key="i"
+          class="flex flex-col justify-center items-center space-y-4 w-28"
         >
-      </span>
+          <span
+            class="flex justify-center items-center h-28 w-28 rounded-lg relative"
+            :style="{
+              backgroundColor: skill.bgColor,
+            }"
+          >
+            <font-awesome-icon :icon="skill.icon" class="text-6xl text-white" />
+
+            <!-- Overlay -->
+            <span
+              v-if="skill.skillLevel === 'Basic'"
+              class="absolute inset-0 flex bg-opacity-40 justify-center items-center rounded-lg bg-black"
+            >
+              <span class="text-white uppercase transform -rotate-45">Basics only</span>
+            </span>
+          </span>
+
+          <span
+            class="text-xl font-medium"
+            :style="{
+              color: skill.bgColor,
+            }"
+            >{{ skill.name }}</span
+          >
+        </span>
+      </TransitionGroup>
     </div>
   </div>
 </template>
@@ -43,6 +84,25 @@
 // Package Manager: NPM, Yarn, Pip, Composer,
 // DevOps: Docker, Kubernetes, AWS, Azure, Google Cloud, Heroku, Netlify, Vercel, DigitalOcean, Linux, Windows, Raspberry Pi,
 // Testing: Jest, React Testing Library, Cypress, Vitest
+
+const categories = [
+  'Frontend',
+  'Mobile',
+  'Full Stack',
+  'Backend',
+  'Database',
+  'Cloud',
+  'Version Control',
+  'Agile',
+  'Design',
+  'Language',
+  'Desktop',
+  'CSS Framework',
+  'Build Tools',
+  'Package Manager',
+  'DevOps',
+  'Testing',
+]
 
 const skills = [
   {
@@ -152,6 +212,7 @@ const skills = [
     name: 'Dotnet',
     icon: 'fa-brands fa-microsoft',
     bgColor: '#5C2D91',
+    skillLevel: 'Basic',
   },
   {
     category: 'Database',
@@ -260,18 +321,21 @@ const skills = [
     name: 'C#',
     icon: 'fa-brands fa-microsoft',
     bgColor: '#5C2D91',
+    skillLevel: 'Basic',
   },
   {
     category: 'Language',
     name: 'Python',
     icon: 'fa-brands fa-python',
     bgColor: '#3776AB',
+    skillLevel: 'Basic',
   },
   {
     category: 'Language',
     name: 'Rust',
     icon: 'fa-brands fa-rust',
     bgColor: '#000000',
+    skillLevel: 'Basic',
   },
   {
     category: 'Desktop',
@@ -430,6 +494,37 @@ const skills = [
     bgColor: '#4FC08D',
   },
 ]
+
+const selectedCat = ref('Frontend')
+
+const filteredSkills = ref(skills.filter((skill) => skill.category === selectedCat.value))
+
+const onCatClick = (cat: string) => {
+  selectedCat.value = cat
+  filteredSkills.value = skills.filter((skill) => skill.category === cat)
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+.skills-move,
+.skills-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+
+.skills-leave-active {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+}
+
+.skills-enter-from,
+.skills-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skills-enter-to,
+.skills-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
