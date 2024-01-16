@@ -1,8 +1,8 @@
 <template>
-  <div class="pt-20 mb-16 text-center flex flex-col justify-center items-center">
-    <h2 class="text-7xl gradient-text">My Works</h2>
+  <div class="pt-20 md:mb-16 text-center flex flex-col justify-center items-center px-4">
+    <h2 class="text-6xl md:text-7xl gradient-text">My Works</h2>
 
-    <div class="max-w-[75rem] mx-auto mt-20">
+    <div class="max-w-[75rem] mx-auto mt-12 md:mt-20">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
         <div
           v-for="(project, index) in projects"
@@ -42,15 +42,15 @@
                 <span
                   v-for="(skill, i) in project.skills"
                   :key="i"
-                  class="flex flex-col justify-center items-center space-y-1 w-16"
+                  class="flex flex-col justify-center items-center space-y-1 w-12 xl:w-16"
                 >
                   <span
-                    class="flex justify-center items-center h-16 w-16 rounded-lg relative"
+                    class="flex justify-center items-center h-12 xl:h-16 w-12 xl:w-16 rounded-lg relative"
                     :style="{
                       backgroundColor: skill.bgColor,
                     }"
                   >
-                    <font-awesome-icon :icon="skill.icon" class="text-4xl text-white" />
+                    <font-awesome-icon :icon="skill.icon" class="text-3xl xl:text-4xl text-white" />
                   </span>
                 </span>
               </div>

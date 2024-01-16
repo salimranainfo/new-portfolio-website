@@ -1,12 +1,12 @@
 <template>
-  <div class="pt-20 mb-16 text-center flex flex-col justify-center items-center">
-    <h2 class="text-7xl gradient-text">Skills</h2>
+  <div class="pt-20 md:mb-16 text-center flex flex-col justify-center items-center px-4">
+    <h2 class="text-6xl md:text-7xl gradient-text">Skills</h2>
 
-    <div class="max-w-[75rem] mx-auto mt-20">
+    <div class="max-w-[75rem] mx-auto mt-12 md:mt-20">
       <div class="flex justify-center items-center flex-wrap gap-4">
         <button v-for="(cat, i) in categories" :key="i" @click="onCatClick(cat)">
           <span
-            class="flex justify-center items-center rounded-3xl overflow-hidden uppercase text-lg font-medium group"
+            class="flex justify-center items-center rounded-3xl overflow-hidden uppercase text-base md:text-lg font-medium group"
             :style="{
               boxShadow: '0px 4px 6px 0px rgba(0, 0, 0, 0.12)',
               background: 'linear-gradient(80deg, #9c83ff 14.62%, #ff9051 85.38%)',
@@ -20,7 +20,7 @@
               }"
             >
               <span
-                class="flex justify-center items-center h-full w-full px-6 py-2 rounded-3xl group-active:bg-transparent group-active:text-white transition-all duration-150 ease-in-out"
+                class="flex justify-center items-center h-full w-full px-4 md:px-6 py-1 md:py-2 rounded-3xl group-active:bg-transparent group-active:text-white transition-all duration-150 ease-in-out"
                 :class="{
                   'bg-transparent text-white': selectedCat === cat,
                   'bg-white ': selectedCat !== cat,
@@ -32,19 +32,19 @@
         </button>
       </div>
 
-      <TransitionGroup name="skills" tag="div" class="flex flex-wrap justify-center items-start gap-6 mt-16">
+      <TransitionGroup name="skills" tag="div" class="flex flex-wrap justify-center items-start gap-10 md:gap-6 mt-16">
         <span
           v-for="(skill, i) in filteredSkills"
           :key="i"
-          class="flex flex-col justify-center items-center space-y-4 w-28"
+          class="flex flex-col justify-center items-center space-y-4 w-20 md:w-28"
         >
           <span
-            class="flex justify-center items-center h-28 w-28 rounded-lg relative"
+            class="flex justify-center items-center h-20 w-20 md:h-28 md:w-28 rounded-lg relative"
             :style="{
               backgroundColor: skill.bgColor,
             }"
           >
-            <font-awesome-icon :icon="skill.icon" class="text-6xl text-white" />
+            <font-awesome-icon :icon="skill.icon" class="text-4xl md:text-6xl text-white" />
 
             <!-- Overlay -->
             <span
