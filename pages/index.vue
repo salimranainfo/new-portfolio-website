@@ -3,6 +3,8 @@
     <HomepageHero />
     <HomepageAbout />
     <HomepageSkills />
+    <HomepageProjects />
+    <HomepageContact />
   </div>
 </template>
 

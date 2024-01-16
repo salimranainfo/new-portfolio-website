@@ -1,9 +1,9 @@
 <template>
-  <div class="pt-16 mb-16 text-center flex flex-col justify-center items-center">
+  <div class="pt-20 mb-16 text-center flex flex-col justify-center items-center">
     <h2 class="text-7xl gradient-text">Skills</h2>
 
-    <div class="max-w-[75rem] mx-auto">
-      <div class="mt-10 flex justify-center items-center flex-wrap gap-4">
+    <div class="max-w-[75rem] mx-auto mt-20">
+      <div class="flex justify-center items-center flex-wrap gap-4">
         <button v-for="(cat, i) in categories" :key="i" @click="onCatClick(cat)">
           <span
             class="flex justify-center items-center rounded-3xl overflow-hidden uppercase text-lg font-medium group"
@@ -13,15 +13,17 @@
             }"
           >
             <span
-              class="flex justify-center items-center bg-white hover h-full w-full rounded-3xl p-[2px] group-hover:bg-transparent group-active:bg-transparent transition-all duration-150 ease-in-out"
+              class="flex justify-center items-center h-full w-full rounded-3xl p-[2px] group-hover:bg-transparent group-active:bg-transparent transition-all duration-150 ease-in-out"
               :class="{
                 'bg-transparent': selectedCat === cat,
+                'bg-white': selectedCat !== cat,
               }"
             >
               <span
-                class="flex justify-center items-center bg-white h-full w-full px-6 py-2 rounded-3xl group-active:bg-transparent group-active:text-white transition-all duration-150 ease-in-out"
+                class="flex justify-center items-center h-full w-full px-6 py-2 rounded-3xl group-active:bg-transparent group-active:text-white transition-all duration-150 ease-in-out"
                 :class="{
-                  'text-white bg-transparent': selectedCat === cat,
+                  'bg-transparent text-white': selectedCat === cat,
+                  'bg-white ': selectedCat !== cat,
                 }"
                 >{{ cat }}</span
               >
@@ -30,7 +32,7 @@
         </button>
       </div>
 
-      <TransitionGroup name="skills" tag="div" class="flex flex-wrap justify-center items-start gap-6 mt-10">
+      <TransitionGroup name="skills" tag="div" class="flex flex-wrap justify-center items-start gap-6 mt-16">
         <span
           v-for="(skill, i) in filteredSkills"
           :key="i"
@@ -84,6 +86,9 @@
 // Package Manager: NPM, Yarn, Pip, Composer,
 // DevOps: Docker, Kubernetes, AWS, Azure, Google Cloud, Heroku, Netlify, Vercel, DigitalOcean, Linux, Windows, Raspberry Pi,
 // Testing: Jest, React Testing Library, Cypress, Vitest
+// Database ORM: Mongoose, TypeORM, Sequelize, Eloquent
+// Communications: Slack, Skype, Discord, Google Meet, Zoom, WhatsApp, Signal, MS Teams
+// Other: Chrome Extension Development
 
 const categories = [
   'Frontend',
@@ -102,6 +107,9 @@ const categories = [
   'Package Manager',
   'DevOps',
   'Testing',
+  'Database ORM',
+  'Communications',
+  'Other',
 ]
 
 const skills = [
@@ -492,6 +500,84 @@ const skills = [
     name: 'Vitest',
     icon: 'fa-brands fa-vuejs',
     bgColor: '#4FC08D',
+  },
+  {
+    category: 'Database ORM',
+    name: 'Mongoose',
+    icon: 'fa-brands fa-mongodb',
+    bgColor: '#47A248',
+  },
+  {
+    category: 'Database ORM',
+    name: 'TypeORM',
+    icon: 'fa-brands fa-node-js',
+    bgColor: '#339933',
+  },
+  {
+    category: 'Database ORM',
+    name: 'Sequelize',
+    icon: 'fa-brands fa-node-js',
+    bgColor: '#000000',
+  },
+  {
+    category: 'Database ORM',
+    name: 'Eloquent',
+    icon: 'fa-brands fa-laravel',
+    bgColor: '#FF2D20',
+  },
+  {
+    category: 'Communications',
+    name: 'Slack',
+    icon: 'fa-brands fa-slack',
+    bgColor: '#4A154B',
+  },
+  {
+    category: 'Communications',
+    name: 'Skype',
+    icon: 'fa-brands fa-skype',
+    bgColor: '#00AFF0',
+  },
+  {
+    category: 'Communications',
+    name: 'Discord',
+    icon: 'fa-brands fa-discord',
+    bgColor: '#7289DA',
+  },
+  {
+    category: 'Communications',
+    name: 'Google Meet',
+    icon: 'fa-brands fa-google',
+    bgColor: '#4285F4',
+  },
+  {
+    category: 'Communications',
+    name: 'Zoom',
+    icon: 'fa-brands fa-zoom',
+    bgColor: '#2D8CFF',
+  },
+  {
+    category: 'Communications',
+    name: 'WhatsApp',
+    icon: 'fa-brands fa-whatsapp',
+    bgColor: '#25D366',
+  },
+  {
+    category: 'Communications',
+    name: 'Signal',
+    icon: 'fa-brands fa-signal',
+    bgColor: '#2596F5',
+  },
+  {
+    category: 'Communications',
+    name: 'MS Teams',
+    icon: 'fa-brands fa-microsoft',
+    bgColor: '#0078D7',
+  },
+  {
+    category: 'Other',
+    name: 'Chrome Extension Development',
+    icon: 'fa-brands fa-chrome',
+    bgColor: '#4285F4',
   },
 ]
 

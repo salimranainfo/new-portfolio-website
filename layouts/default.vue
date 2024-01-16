@@ -6,6 +6,8 @@
     }"
   >
     <slot></slot>
+
+    <SharedFooter />
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="pt-16 mb-16 text-center flex flex-col justify-center items-center">
+  <div class="text-center flex flex-col justify-center items-center mb-16">
     <h2 class="text-7xl gradient-text">About</h2>
 
-    <div class="max-w-[70rem] text-4E4E4E my-10 space-y-4 text-lg">
+    <div class="max-w-[75rem] text-4E4E4E mt-20 space-y-4 text-xl tracking-wider leading-relaxed">
       <p>
         As a passionate software engineer, I thrive on the intricate dance between logic and creativity. Currently
         immersed in the dynamic world of WebHR, my expertise centers around React Native, where I seamlessly blend
