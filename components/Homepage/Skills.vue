@@ -44,7 +44,8 @@
               backgroundColor: skill.bgColor,
             }"
           >
-            <font-awesome-icon :icon="skill.icon" class="text-4xl md:text-6xl text-white" />
+            <font-awesome-icon v-if="skill.icon" :icon="skill.icon" class="text-4xl md:text-6xl text-white" />
+            <SvgCollection v-else :name="(skill.svg as string)"></SvgCollection>
 
             <!-- Overlay -->
             <span
@@ -69,6 +70,8 @@
 </template>
 
 <script setup lang="ts">
+import SvgCollection from '@/components/Shared/SvgCollection.vue'
+
 // Add this skills to below array
 // Frontend: HTML5, CSS3, React, Vue.js, Svelte, Astro, Alpine.js
 // Mobile: React Native
@@ -134,8 +137,9 @@ const skills = [
   {
     category: 'Frontend',
     name: 'TypeScript',
-    icon: 'fa-brands fa-js-square',
-    bgColor: '#007ACC',
+    icon: '',
+    svg: 'typescript',
+    bgColor: '#3178C6',
   },
   {
     category: 'Frontend',
@@ -152,20 +156,23 @@ const skills = [
   {
     category: 'Frontend',
     name: 'Svelte',
-    icon: 'fa-brands fa-svelte',
+    icon: '',
+    svg: 'svelte',
     bgColor: '#FF3E00',
   },
   {
     category: 'Frontend',
     name: 'Astro',
-    icon: 'fa-brands fa-astro',
-    bgColor: '#FF0080',
+    icon: '',
+    svg: 'astro',
+    bgColor: '#FF5D01',
   },
   {
     category: 'Frontend',
     name: 'Alpine.js',
-    icon: 'fa-brands fa-alipay',
-    bgColor: '#8BC0D0',
+    icon: '',
+    svg: 'alpine',
+    bgColor: '#777777',
   },
   {
     category: 'Mobile',
@@ -176,37 +183,43 @@ const skills = [
   {
     category: 'Full Stack',
     name: 'Next.js',
-    icon: 'fa-brands fa-react',
-    bgColor: '#61DAFB',
+    icon: '',
+    svg: 'next',
+    bgColor: '#000000',
   },
   {
     category: 'Full Stack',
     name: 'Nuxt.js',
-    icon: 'fa-brands fa-vuejs',
-    bgColor: '#4FC08D',
+    icon: '',
+    svg: 'nuxt',
+    bgColor: '#00DC82',
   },
   {
     category: 'Full Stack',
     name: 'SvelteKit',
-    icon: 'fa-brands fa-svelte',
+    icon: '',
+    svg: 'svelte',
     bgColor: '#FF3E00',
   },
   {
     category: 'Backend',
     name: 'NestJS',
-    icon: 'fa-brands fa-node-js',
-    bgColor: '#E0234E',
+    icon: '',
+    svg: 'nest',
+    bgColor: '#000000',
   },
   {
     category: 'Backend',
     name: 'Node.js',
-    icon: 'fa-brands fa-node-js',
+    icon: '',
+    svg: 'node',
     bgColor: '#339933',
   },
   {
     category: 'Backend',
     name: 'Express.js',
-    icon: 'fa-brands fa-node-js',
+    icon: '',
+    svg: 'express',
     bgColor: '#000000',
   },
   {
@@ -218,39 +231,45 @@ const skills = [
   {
     category: 'Backend',
     name: 'Dotnet',
-    icon: 'fa-brands fa-microsoft',
-    bgColor: '#5C2D91',
+    icon: '',
+    svg: 'dotnet',
+    bgColor: '#5027d5',
     skillLevel: 'Basic',
   },
   {
     category: 'Database',
     name: 'MongoDB',
-    icon: 'fa-brands fa-mongodb',
+    icon: '',
+    svg: 'mongodb',
     bgColor: '#47A248',
   },
   {
     category: 'Database',
     name: 'MySQL',
-    icon: 'fa-brands fa-mysql',
+    icon: '',
+    svg: 'mysql',
     bgColor: '#4479A1',
   },
   {
     category: 'Database',
     name: 'SQLite',
-    icon: 'fa-brands fa-database',
+    icon: '',
+    svg: 'sqlite',
     bgColor: '#003B57',
   },
   {
     category: 'Cloud',
     name: 'Firebase',
-    icon: 'fa-brands fa-google',
-    bgColor: '#FFCA28',
+    icon: '',
+    svg: 'firebase',
+    bgColor: '#1B3A57',
   },
   {
     category: 'Cloud',
     name: 'AWS Amplify',
-    icon: 'fa-brands fa-aws',
-    bgColor: '#FF9900',
+    icon: '',
+    svg: 'amplify',
+    bgColor: '#BD0816',
   },
   {
     category: 'Version Control',
@@ -291,14 +310,16 @@ const skills = [
   {
     category: 'Agile',
     name: 'Pivotal Tracker',
-    icon: 'fa-brands fa-pivotal-tracker',
-    bgColor: '#517A9E',
+    icon: '',
+    svg: 'pivotal',
+    bgColor: '#5282B0',
   },
   {
     category: 'Agile',
     name: 'Azure DevOps',
-    icon: 'fa-brands fa-microsoft',
-    bgColor: '#0078D7',
+    icon: '',
+    svg: 'azuredev',
+    bgColor: '#1380DA',
   },
   {
     category: 'Design',
@@ -315,8 +336,9 @@ const skills = [
   {
     category: 'Language',
     name: 'TypeScript',
-    icon: 'fa-brands fa-js-square',
-    bgColor: '#007ACC',
+    icon: '',
+    svg: 'typescript',
+    bgColor: '#3178C6',
   },
   {
     category: 'Language',
@@ -327,8 +349,9 @@ const skills = [
   {
     category: 'Language',
     name: 'C#',
-    icon: 'fa-brands fa-microsoft',
-    bgColor: '#5C2D91',
+    icon: '',
+    svg: 'csharp',
+    bgColor: '#5A329A',
     skillLevel: 'Basic',
   },
   {
@@ -348,14 +371,16 @@ const skills = [
   {
     category: 'Desktop',
     name: 'Electron',
-    icon: 'fa-brands fa-electron',
-    bgColor: '#47848F',
+    icon: '',
+    svg: 'electron',
+    bgColor: '#000000',
   },
   {
     category: 'CSS Framework',
     name: 'Tailwind CSS',
-    icon: 'fa-brands fa-tailwind',
-    bgColor: '#38B2AC',
+    icon: '',
+    svg: 'tailwind',
+    bgColor: '#000000',
   },
   {
     category: 'CSS Framework',
@@ -378,14 +403,16 @@ const skills = [
   {
     category: 'Build Tools',
     name: 'Webpack',
-    icon: 'fa-brands fa-webpack',
-    bgColor: '#8DD6F9',
+    icon: '',
+    svg: 'webpack',
+    bgColor: '#000000',
   },
   {
     category: 'Build Tools',
     name: 'Babel',
-    icon: 'fa-brands fa-babel',
-    bgColor: '#F9DC3E',
+    icon: '',
+    svg: 'babel',
+    bgColor: '#000000',
   },
   {
     category: 'Package Manager',
@@ -396,7 +423,8 @@ const skills = [
   {
     category: 'Package Manager',
     name: 'Yarn',
-    icon: 'fa-brands fa-yarn',
+    icon: '',
+    svg: 'yarn',
     bgColor: '#2C8EBB',
   },
   {
@@ -408,8 +436,9 @@ const skills = [
   {
     category: 'Package Manager',
     name: 'Composer',
-    icon: 'fa-brands fa-php',
-    bgColor: '#777BB4',
+    icon: '',
+    svg: 'composer',
+    bgColor: '#C09553',
   },
   {
     category: 'DevOps',
@@ -420,7 +449,8 @@ const skills = [
   {
     category: 'DevOps',
     name: 'Kubernetes',
-    icon: 'fa-brands fa-kubernetes',
+    icon: '',
+    svg: 'kubernetes',
     bgColor: '#326CE5',
   },
   {
@@ -432,8 +462,9 @@ const skills = [
   {
     category: 'DevOps',
     name: 'Azure',
-    icon: 'fa-brands fa-microsoft',
-    bgColor: '#0078D7',
+    icon: '',
+    svg: 'azure',
+    bgColor: '#000000',
   },
   {
     category: 'DevOps',
@@ -444,8 +475,9 @@ const skills = [
   {
     category: 'DevOps',
     name: 'Heroku',
-    icon: 'fa-brands fa-heroku',
-    bgColor: '#430098',
+    icon: '',
+    svg: 'heroku',
+    bgColor: '#000000',
   },
   {
     category: 'DevOps',
