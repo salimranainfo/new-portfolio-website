@@ -50,7 +50,8 @@
                       backgroundColor: skill.bgColor,
                     }"
                   >
-                    <font-awesome-icon :icon="skill.icon" class="text-3xl xl:text-4xl text-white" />
+                    <font-awesome-icon v-if="skill.icon" :icon="skill.icon" class="text-3xl xl:text-4xl text-white" />
+                    <SvgCollection v-else :name="(skill.svg as string)" size="medium"></SvgCollection>
                   </span>
                 </span>
               </div>
@@ -68,7 +69,9 @@
 </template>
 
 <script setup lang="ts">
+import SvgCollection from '../Shared/SvgCollection.vue'
 import projectOneImage from '@/assets/images/project-1.png'
+import skills from '@/assets/helpers/skills'
 
 const colors = ['#6C63FF', '#FF63DD', '#FEB967', '#1AE4FF']
 
@@ -79,233 +82,7 @@ const projects = [
     image: projectOneImage,
     link: 'https://sendpay.vercel.app',
     github: '#!',
-    skills: [
-      {
-        category: 'Frontend',
-        name: 'HTML',
-        icon: 'fa-brands fa-html5',
-        bgColor: '#E54F26',
-      },
-      {
-        category: 'Frontend',
-        name: 'CSS',
-        icon: 'fa-brands fa-css3-alt',
-        bgColor: '#2965F1',
-      },
-      {
-        category: 'Frontend',
-        name: 'JavaScript',
-        icon: 'fa-brands fa-js-square',
-        bgColor: '#F0DB4F',
-      },
-      {
-        category: 'Frontend',
-        name: 'Vue.js',
-        icon: 'fa-brands fa-vuejs',
-        bgColor: '#41B883',
-      },
-      {
-        category: 'Frontend',
-        name: 'Nuxt.js',
-        icon: 'fa-brands fa-nuxt',
-        bgColor: '#00C58E',
-      },
-    ],
-  },
-  {
-    title: 'Sendpay',
-    description: 'Sendpay is a payment gateway that allows you to send money to anyone, anywhere, anytime.',
-    image: projectOneImage,
-    link: 'https://sendpay.vercel.app',
-    github: '#!',
-    skills: [
-      {
-        category: 'Frontend',
-        name: 'HTML',
-        icon: 'fa-brands fa-html5',
-        bgColor: '#E54F26',
-      },
-      {
-        category: 'Frontend',
-        name: 'CSS',
-        icon: 'fa-brands fa-css3-alt',
-        bgColor: '#2965F1',
-      },
-      {
-        category: 'Frontend',
-        name: 'JavaScript',
-        icon: 'fa-brands fa-js-square',
-        bgColor: '#F0DB4F',
-      },
-      {
-        category: 'Frontend',
-        name: 'Vue.js',
-        icon: 'fa-brands fa-vuejs',
-        bgColor: '#41B883',
-      },
-      {
-        category: 'Frontend',
-        name: 'Nuxt.js',
-        icon: 'fa-brands fa-nuxt',
-        bgColor: '#00C58E',
-      },
-    ],
-  },
-  {
-    title: 'Sendpay',
-    description: 'Sendpay is a payment gateway that allows you to send money to anyone, anywhere, anytime.',
-    image: projectOneImage,
-    link: 'https://sendpay.vercel.app',
-    github: '#!',
-    skills: [
-      {
-        category: 'Frontend',
-        name: 'HTML',
-        icon: 'fa-brands fa-html5',
-        bgColor: '#E54F26',
-      },
-      {
-        category: 'Frontend',
-        name: 'CSS',
-        icon: 'fa-brands fa-css3-alt',
-        bgColor: '#2965F1',
-      },
-      {
-        category: 'Frontend',
-        name: 'JavaScript',
-        icon: 'fa-brands fa-js-square',
-        bgColor: '#F0DB4F',
-      },
-      {
-        category: 'Frontend',
-        name: 'Vue.js',
-        icon: 'fa-brands fa-vuejs',
-        bgColor: '#41B883',
-      },
-      {
-        category: 'Frontend',
-        name: 'Nuxt.js',
-        icon: 'fa-brands fa-nuxt',
-        bgColor: '#00C58E',
-      },
-    ],
-  },
-  {
-    title: 'Sendpay',
-    description: 'Sendpay is a payment gateway that allows you to send money to anyone, anywhere, anytime.',
-    image: projectOneImage,
-    link: 'https://sendpay.vercel.app',
-    github: '#!',
-    skills: [
-      {
-        category: 'Frontend',
-        name: 'HTML',
-        icon: 'fa-brands fa-html5',
-        bgColor: '#E54F26',
-      },
-      {
-        category: 'Frontend',
-        name: 'CSS',
-        icon: 'fa-brands fa-css3-alt',
-        bgColor: '#2965F1',
-      },
-      {
-        category: 'Frontend',
-        name: 'JavaScript',
-        icon: 'fa-brands fa-js-square',
-        bgColor: '#F0DB4F',
-      },
-      {
-        category: 'Frontend',
-        name: 'Vue.js',
-        icon: 'fa-brands fa-vuejs',
-        bgColor: '#41B883',
-      },
-      {
-        category: 'Frontend',
-        name: 'Nuxt.js',
-        icon: 'fa-brands fa-nuxt',
-        bgColor: '#00C58E',
-      },
-    ],
-  },
-  {
-    title: 'Sendpay',
-    description: 'Sendpay is a payment gateway that allows you to send money to anyone, anywhere, anytime.',
-    image: projectOneImage,
-    link: 'https://sendpay.vercel.app',
-    github: '#!',
-    skills: [
-      {
-        category: 'Frontend',
-        name: 'HTML',
-        icon: 'fa-brands fa-html5',
-        bgColor: '#E54F26',
-      },
-      {
-        category: 'Frontend',
-        name: 'CSS',
-        icon: 'fa-brands fa-css3-alt',
-        bgColor: '#2965F1',
-      },
-      {
-        category: 'Frontend',
-        name: 'JavaScript',
-        icon: 'fa-brands fa-js-square',
-        bgColor: '#F0DB4F',
-      },
-      {
-        category: 'Frontend',
-        name: 'Vue.js',
-        icon: 'fa-brands fa-vuejs',
-        bgColor: '#41B883',
-      },
-      {
-        category: 'Frontend',
-        name: 'Nuxt.js',
-        icon: 'fa-brands fa-nuxt',
-        bgColor: '#00C58E',
-      },
-    ],
-  },
-  {
-    title: 'Sendpay',
-    description: 'Sendpay is a payment gateway that allows you to send money to anyone, anywhere, anytime.',
-    image: projectOneImage,
-    link: 'https://sendpay.vercel.app',
-    github: '#!',
-    skills: [
-      {
-        category: 'Frontend',
-        name: 'HTML',
-        icon: 'fa-brands fa-html5',
-        bgColor: '#E54F26',
-      },
-      {
-        category: 'Frontend',
-        name: 'CSS',
-        icon: 'fa-brands fa-css3-alt',
-        bgColor: '#2965F1',
-      },
-      {
-        category: 'Frontend',
-        name: 'JavaScript',
-        icon: 'fa-brands fa-js-square',
-        bgColor: '#F0DB4F',
-      },
-      {
-        category: 'Frontend',
-        name: 'Vue.js',
-        icon: 'fa-brands fa-vuejs',
-        bgColor: '#41B883',
-      },
-      {
-        category: 'Frontend',
-        name: 'Nuxt.js',
-        icon: 'fa-brands fa-nuxt',
-        bgColor: '#00C58E',
-      },
-    ],
+    skills: skills.filter((skill) => skill.name === 'Nuxt.js' || skill.name === 'Tailwind CSS'),
   },
 ]
 </script>
