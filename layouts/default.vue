@@ -17,7 +17,7 @@ import bgImage from '@/assets/images/bg.svg'
 
 <style scoped>
 .bg-image {
-  background-size: cover;
+  background-size: contain;
   background-position: right center;
   background-repeat: no-repeat;
 }
