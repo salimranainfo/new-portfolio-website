@@ -391,8 +391,9 @@ const skills = [
   {
     category: 'CSS Framework',
     name: 'Material UI',
-    icon: 'fa-brands fa-react',
-    bgColor: '#61DAFB',
+    icon: '',
+    svg: 'material-ui',
+    bgColor: '#000000',
   },
   {
     category: 'CSS Framework',
@@ -450,7 +451,7 @@ const skills = [
     category: 'DevOps',
     name: 'Kubernetes',
     icon: '',
-    svg: 'kubernetes',
+    svg: 'k8s',
     bgColor: '#326CE5',
   },
   {
@@ -482,13 +483,15 @@ const skills = [
   {
     category: 'DevOps',
     name: 'Netlify',
-    icon: 'fa-brands fa-netlify',
-    bgColor: '#00C7B7',
+    icon: '',
+    svg: 'netlify',
+    bgColor: '#42A4BD',
   },
   {
     category: 'DevOps',
     name: 'Vercel',
-    icon: 'fa-brands fa-vercel',
+    icon: '',
+    svg: 'vercel',
     bgColor: '#000000',
   },
   {
@@ -524,31 +527,36 @@ const skills = [
   {
     category: 'Testing',
     name: 'Cypress',
-    icon: 'fa-brands fa-cypress',
-    bgColor: '#17202C',
+    icon: '',
+    svg: 'cypress',
+    bgColor: '#000000',
   },
   {
     category: 'Testing',
     name: 'Vitest',
-    icon: 'fa-brands fa-vuejs',
-    bgColor: '#4FC08D',
+    icon: '',
+    svg: 'vitest',
+    bgColor: '#000000',
   },
   {
     category: 'Database ORM',
     name: 'Mongoose',
-    icon: 'fa-brands fa-mongodb',
-    bgColor: '#47A248',
+    icon: '',
+    svg: 'mongoose',
+    bgColor: '#850000',
   },
   {
     category: 'Database ORM',
     name: 'TypeORM',
-    icon: 'fa-brands fa-node-js',
-    bgColor: '#339933',
+    icon: '',
+    svg: 'typeorm',
+    bgColor: '#000000',
   },
   {
     category: 'Database ORM',
     name: 'Sequelize',
-    icon: 'fa-brands fa-node-js',
+    icon: '',
+    svg: 'sequelize',
     bgColor: '#000000',
   },
   {
@@ -584,8 +592,9 @@ const skills = [
   {
     category: 'Communications',
     name: 'Zoom',
-    icon: 'fa-brands fa-zoom',
-    bgColor: '#2D8CFF',
+    icon: '',
+    svg: 'zoom',
+    bgColor: '#0B5CFF',
   },
   {
     category: 'Communications',
@@ -596,8 +605,9 @@ const skills = [
   {
     category: 'Communications',
     name: 'Signal',
-    icon: 'fa-brands fa-signal',
-    bgColor: '#2596F5',
+    icon: '',
+    svg: 'signal',
+    bgColor: '#3A76F0',
   },
   {
     category: 'Communications',
