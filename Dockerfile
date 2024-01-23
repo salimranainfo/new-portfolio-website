@@ -18,7 +18,7 @@ RUN yarn generate
 # Stage 2 - the production environment
 FROM nginx:1.21.1-alpine as production-stage
 
-COPY --from=build-stage /usr/src/app/.output /usr/share/nginx/html
+COPY --from=build-stage /usr/src/app/.output/public /usr/share/nginx/html
 
 EXPOSE 80
 
