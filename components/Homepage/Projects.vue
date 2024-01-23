@@ -28,8 +28,8 @@
             </svg>
           </div>
 
-          <div class="-mt-32">
-            <img :src="project.image" alt="" />
+          <div class="-mt-32 rounded-lg overflow-hidden" style="box-shadow: 0px 1px 7px 2px rgba(0, 0, 0, 0.25)">
+            <img :src="project.image" alt="" class="w-full h-full object-contain" />
           </div>
 
           <!-- Overlay -->
@@ -57,9 +57,9 @@
               </div>
             </div>
 
-            <div class="flex justify-between items-center w-full">
-              <a :href="project.link" target="_blank" class="btn">Demo</a>
-              <a :href="project.github" target="_blank" class="btn">Code</a>
+            <div class="flex items-center w-full" :class="project.github ? 'justify-between' : 'justify-center'">
+              <a v-if="project.link" :href="project.link" target="_blank" class="btn">Demo</a>
+              <a v-if="project.github" :href="project.github" target="_blank" class="btn">Code</a>
             </div>
           </div>
         </div>
@@ -70,19 +70,65 @@
 
 <script setup lang="ts">
 import SvgCollection from '../Shared/SvgCollection.vue'
-import projectOneImage from '@/assets/images/project-1.png'
 import skills from '@/assets/helpers/skills'
+
+import serverpointImage from '@/assets/images/projects/serverpoint.jpg'
+import srwImage from '@/assets/images/projects/srw.jpg'
+import colossuscloudImage from '@/assets/images/projects/colossuscloud.jpg'
+import zephyrEventsImage from '@/assets/images/projects/zephyr-events.jpg'
+import visitpatagoniaImage from '@/assets/images/projects/visitpatagonia.jpg'
 
 const colors = ['#6C63FF', '#FF63DD', '#FEB967', '#1AE4FF']
 
 const projects = [
   {
-    title: 'Sendpay',
-    description: 'Sendpay is a payment gateway that allows you to send money to anyone, anywhere, anytime.',
-    image: projectOneImage,
-    link: 'https://sendpay.vercel.app',
-    github: '#!',
+    title: 'SR Web Studio',
+    description: '',
+    image: srwImage,
+    link: 'https://srwebstudio.com',
+    github: 'https://github.com/salimranainfo/new-portfolio-website',
     skills: skills.filter((skill) => skill.name === 'Nuxt.js' || skill.name === 'Tailwind CSS'),
+  },
+  {
+    title: 'Serverpoint',
+    description: '',
+    image: serverpointImage,
+    link: 'https://serverpoint.com',
+    github: '',
+    skills: skills.filter(
+      (skill) => skill.name === 'Nuxt.js' || skill.name === 'Tailwind CSS' || skill.name === 'Strapi'
+    ),
+  },
+  {
+    title: 'Colossuscloud',
+    description: '',
+    image: colossuscloudImage,
+    link: 'https://colossuscloud.com',
+    github: '',
+    skills: skills.filter(
+      (skill) => skill.name === 'Nuxt.js' || skill.name === 'Tailwind CSS' || skill.name === 'Strapi'
+    ),
+  },
+  {
+    title: 'Zephyr Events',
+    description: '',
+    image: zephyrEventsImage,
+    link: 'https://zephyr.events',
+    github: '',
+    skills: skills.filter(
+      (skill) => skill.name === 'Nuxt.js' || skill.name === 'Tailwind CSS' || skill.name === 'Strapi'
+    ),
+  },
+  {
+    title: 'Visit Patagonia',
+    description: '',
+    image: visitpatagoniaImage,
+    link: 'https://visitpatagonia.com.ar',
+    github: '',
+    skills: skills.filter(
+      (skill) =>
+        skill.name === 'Nuxt.js' || skill.name === 'Tailwind CSS' || skill.name === 'Strapi' || skill.name === 'Node.js'
+    ),
   },
 ]
 </script>

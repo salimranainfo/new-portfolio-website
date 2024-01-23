@@ -92,6 +92,7 @@ import skills from '@/assets/helpers/skills'
 // Testing: Jest, React Testing Library, Cypress, Vitest
 // Database ORM: Mongoose, TypeORM, Sequelize, Eloquent
 // Communications: Slack, Skype, Discord, Google Meet, Zoom, WhatsApp, Signal, MS Teams
+// CMS: Strapi, Wordpress, Airtable
 // Other: Chrome Extension Development
 
 const categories = [
@@ -100,6 +101,7 @@ const categories = [
   'Full Stack',
   'Backend',
   'Database',
+  'CMS',
   'Cloud',
   'Version Control',
   'Agile',

@@ -4,10 +4,12 @@
 
     <div class="max-w-[75rem] mx-auto flex justify-around items-center w-full mt-12 md:mt-20 space-x-2">
       <div v-for="(contactMethod, i) in contactMethods" :key="i">
-        <div class="flex flex-col justify-center items-center space-y-6">
-          <img class="" :src="contactMethod.image" :alt="contactMethod.name" />
-          <h3 class="text-lg md:text-2xl 2xl:text-3xl">{{ contactMethod.name }}</h3>
-        </div>
+        <a :href="contactMethod.link" target="_blank">
+          <div class="flex flex-col justify-center items-center space-y-6">
+            <img class="" :src="contactMethod.image" :alt="contactMethod.name" />
+            <h3 class="text-lg md:text-2xl 2xl:text-3xl">{{ contactMethod.name }}</h3>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -23,22 +25,22 @@ const contactMethods = [
   {
     name: 'Github',
     image: githubImage,
-    link: '',
+    link: 'https://github.com/salimranainfo',
   },
   {
     name: 'LinkedIn',
     image: linkedinImage,
-    link: '',
+    link: 'https://www.linkedin.com/in/salimranahere',
   },
   {
     name: 'WhatsApp',
     image: whatsappImage,
-    link: '',
+    link: 'https://wa.me/88001715040028',
   },
   {
     name: 'Email',
     image: emailImage,
-    link: '',
+    link: 'mailto:rana@srwebstudio.com',
   },
 ]
 </script>
