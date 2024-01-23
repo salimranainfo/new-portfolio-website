@@ -1,6 +1,6 @@
 <template>
   <div class="pt-20 md:mb-16 text-center flex flex-col justify-center items-center px-4">
-    <h2 class="text-6xl md:text-7xl gradient-text">My Works</h2>
+    <h2 class="text-6xl md:text-7xl gradient-text">Some of Our Works</h2>
 
     <div class="max-w-[75rem] mx-auto mt-12 md:mt-20">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">

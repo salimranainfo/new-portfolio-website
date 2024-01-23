@@ -1,6 +1,6 @@
 <template>
   <div class="pt-20 md:mb-16 text-center flex flex-col justify-center items-center px-4">
-    <h2 class="text-6xl md:text-7xl gradient-text">Skills</h2>
+    <h2 class="text-6xl md:text-7xl gradient-text">Our Skills</h2>
 
     <div class="max-w-[75rem] mx-auto mt-12 md:mt-20">
       <div class="flex justify-center items-center flex-wrap gap-4">

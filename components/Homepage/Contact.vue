@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-20 md:mb-16 text-center flex flex-col justify-center items-center px-4">
-    <h2 class="text-6xl md:text-7xl gradient-text">Contact Me</h2>
+  <div id="contact" class="pt-20 md:mb-16 text-center flex flex-col justify-center items-center px-4">
+    <h2 class="text-6xl md:text-7xl gradient-text">Contact Us</h2>
 
     <div class="max-w-[75rem] mx-auto flex justify-around items-center w-full mt-12 md:mt-20 space-x-2">
       <div v-for="(contactMethod, i) in contactMethods" :key="i">

@@ -1,8 +1,8 @@
 <template>
   <div class="text-center flex flex-col justify-center items-center md:mb-16 px-4">
-    <h2 class="text-6xl md:text-7xl gradient-text">About</h2>
+    <h2 class="text-6xl md:text-7xl gradient-text">About Us</h2>
 
-    <div class="max-w-[75rem] text-4E4E4E mt-12 md:mt-20 space-y-4 text-lg md:text-xl tracking-wider leading-relaxed">
+    <div class="max-w-[75rem] text-4E4E4E mt-12 md:mt-20 space-y-4 text-lg md:text-xl leading-relaxed">
       <p>
         We are a small agency of web developers and designers who work together to build websites for our clients. We
         have a shared passion for creating websites that are beautiful, functional, and user-friendly. We use a variety
