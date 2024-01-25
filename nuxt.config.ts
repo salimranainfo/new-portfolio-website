@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-CQGZTQZK18',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-D257LNRCHS',
           async: true,
         },
         {
@@ -16,7 +16,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'G-CQGZTQZK18');
+gtag('config', 'G-D257LNRCHS');
           `,
         },
       ],
