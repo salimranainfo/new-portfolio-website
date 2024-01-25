@@ -145,6 +145,7 @@ export default [
     name: 'Firebase',
     icon: '',
     svg: 'firebase',
+    skillLevel: 'Basic',
     bgColor: '#1B3A57',
   },
   {
@@ -152,6 +153,7 @@ export default [
     name: 'AWS Amplify',
     icon: '',
     svg: 'amplify',
+    skillLevel: 'Basic',
     bgColor: '#BD0816',
   },
   {
@@ -264,6 +266,12 @@ export default [
     icon: '',
     svg: 'tailwind',
     bgColor: '#000000',
+  },
+  {
+    category: 'CSS Framework',
+    name: 'Vuetify',
+    icon: '',
+    svg: 'vuetify',
   },
   {
     category: 'CSS Framework',
