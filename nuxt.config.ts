@@ -7,11 +7,19 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://kit.fontawesome.com/0f0f3a9c9b.js',
-          crossorigin: 'anonymous',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-CQGZTQZK18',
+          async: true,
         },
-        
-        
+        {
+          children: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-CQGZTQZK18');
+          `,
+        },
       ],
-    }
+    },
+  },
 })
