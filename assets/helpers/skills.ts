@@ -272,6 +272,7 @@ export default [
     name: 'Vuetify',
     icon: '',
     svg: 'vuetify',
+    bgColor: '#212121',
   },
   {
     category: 'CSS Framework',
