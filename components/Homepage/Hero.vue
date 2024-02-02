@@ -1,8 +1,10 @@
 <template>
-  <div class="py-24 md:py-24 px-4">
+  <div class="py-16 md:py-24 px-4">
     <div class="flex flex-col justify-center items-center h-full">
       <div class="text-center flex flex-col justify-center items-center">
-        <p class="text-xl md:text-3xl text-1F1F21">Hi, we are,</p>
+        <img src="/logo.svg" alt="" class="h-24 md:h-36" />
+
+        <p class="text-xl md:text-3xl text-1F1F21 mt-12">Hi, we are,</p>
 
         <h1 class="text-4xl md:text-6xl font-medium mt-4 text-1F1F21">SR Web Studio</h1>
 
