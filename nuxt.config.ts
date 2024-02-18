@@ -5,6 +5,21 @@ export default defineNuxtConfig({
   css: ['@fortawesome/fontawesome-svg-core/styles.css'],
   app: {
     head: {
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=AW-785084983',
+          async: true,
+        },
+        {
+          children: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-785084983');
+          `,
+        },
+      ],
       title: 'SR Web Studio',
       meta: [
         {

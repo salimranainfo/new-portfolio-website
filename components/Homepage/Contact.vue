@@ -35,7 +35,7 @@ const contactMethods = [
   {
     name: 'WhatsApp',
     image: whatsappImage,
-    link: 'https://wa.me/88001715040028',
+    link: 'https://wa.me/88001777364887',
   },
   {
     name: 'Email',
